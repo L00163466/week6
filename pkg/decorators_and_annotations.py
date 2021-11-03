@@ -33,16 +33,14 @@ class PERSON:
     def display_person_name(self):
         print("Name: {}".format(self._name))
 
+    @staticmethod
     @overload
-    def display_person_lnum(self, lnum:int):
-        print("L Num: {}".format(lnum))
+    def display_person_lnum(lnum: int):
+        print("L Num Old Format: {}".format(lnum))
 
-    @overload
-    def display_person_lnum(self, lnum:str):
-        print("L Num: {}".format(lnum))
-
-    def display_person_lnum(self, lnum):
-        print("L Num: {}".format(self._lnum))
+    @staticmethod
+    def display_person_lnum(lnum: str):
+        print("L Num New Format: {}".format(lnum))
 
 
 if __name__ == '__main__':
@@ -71,4 +69,4 @@ if __name__ == '__main__':
     Jane.name = "Jane Doe"
     Jane.display_person_name
     Jane.display_person_lnum(1234567)
-    Joe.display_person_lnum("L001234567")
+    Jane.display_person_lnum("L001234567")
